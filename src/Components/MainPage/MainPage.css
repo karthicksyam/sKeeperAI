@@ -1,0 +1,235 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+
+
+a {
+  color: #296eb889;
+  width: 230px;
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+  gap: 20px;
+  font-size: 1.1rem;
+  text-decoration: none;
+  font-weight: 600;
+  padding: 10px;
+  border-radius: 10px;
+  transition: 0.3s ease-in-out;
+  /* color: #296eb889; */
+}
+
+a:hover{
+  cursor: pointer;
+  background-color: #296eb889;
+  color: #072c7c;
+  transform: scale(1.1);
+}
+
+.main-container {
+  display: flex;
+}
+
+.header-display--combo {
+  flex-direction: column;
+}
+
+.display-container {
+  /* background-color: blue; */
+  width: 100vw;
+  height: 100vh;
+}
+
+.display-container--one {
+  background-color: #f5f9ff;
+  height: 275px;
+  width: 1175px;
+  margin-left: 15px;
+  margin-top: 15px;
+  border-radius: 15px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.display-container--two {
+  display: flex;
+  width: 1175px;
+  justify-content: space-between;
+  margin-left: 15px;
+  margin-top: 15px;
+}
+
+.mini-display--one {
+  background-color: #f5f9ff;
+  border-radius: 15px;
+  width: 710px;
+  height: 378px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.mini-display--two {
+  background-color: #f5f9ff;
+  border-radius: 15px;
+  width: 450px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.header-contents {
+  display: flex;
+  /* background-color: red; */
+  gap: 5px;
+  align-items: center;
+}
+
+.profile-icon img {
+  height: 40px;
+  width: 40px;
+  /* background-color: white; */
+}
+
+.question-icon img {
+  height: 27px;
+  width: 27px;
+}
+
+.settings-icon img {
+  height: 27px;
+  width: 27px;
+}
+
+.header-text {
+  color: #072c7c;
+  margin-left: 20px;
+}
+
+/* .header-container {
+  background-color: #f5f9ff;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  font-family: "Poppins", sans-serif;
+  width: 1175px;
+  height: 70px;
+  border-radius: 20px;
+  margin-left: 15px;
+  margin-top: 20px;
+} */
+
+.sidebar-container {
+  background-color: #f5f9ff;
+  display: flex;
+  position: relative;
+  flex-direction: column;
+  font-family: "Poppins", sans-serif;
+  height: 95vh;
+  width: 270px;
+  /* gap: 2.3rem; */
+  /* justify-content: center; */
+  align-items: center;
+  padding: 20px;
+  border-radius: 25px;
+  margin-top: 20px;
+  margin-left: 20px;
+}
+
+.skeeper-logo {
+  height: 50px;
+}
+
+.underline {
+  border-bottom: 3px solid rgba(0, 0, 0, 0.203);
+  width: 85%;
+  margin-top: 15px;
+  margin-bottom: 10px;
+}
+
+.underline-bottom {
+  border-bottom: 3px solid rgba(0, 0, 0, 0.203);
+  width: 90%;
+  margin-top: 62vh;
+  /* margin-bottom: 10px; */
+}
+
+.menu-list {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  position: fixed;
+  margin-top: 4vh;
+  top: 13vh;
+  gap: 20px;
+  padding: 10px;
+}
+
+.nav-item-active{
+  background: #5fcefe47;
+  color: #072c7c;
+}
+
+.navc-item{
+  background-color: inherit;
+  color: #072c7c;
+}
+
+
+/* .menu-list .item {
+  background-color: red;
+  width: 230px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 20px;
+  font-size: 1.1rem;
+  text-decoration: none;
+  font-weight: 600;
+  padding: 10px;
+  border-radius: 10px;
+  transition: 0.3s ease-in-out;
+  color: #296eb889;
+  justify-content: center;
+  font-size: 20px;
+}
+
+.menu-list .item h4{
+  background-color: red;
+  width: 165px;
+}
+
+.item img {
+  height: 20px;
+  width: 20px;
+  align-items: center;
+  justify-content: center;
+}
+
+.menu-list .item:hover {
+  background: #5fcefe47;
+  color: #072c7c;
+  padding-top: 15px;
+  padding-bottom: 15px;
+  font-weight: bold;
+} */
+
+
+.almasco-image {
+  margin-top: 40px;
+  height: 90px;
+  width: 170px;
+}
+
+/* .username-email--container {
+  margin-right: 15px;
+  background-color: red;
+  font-size: 14px;
+}
+
+.username-text {
+  color: #072c7c;
+}
+
+.email-text {
+  color: #0000003f;
+} */
