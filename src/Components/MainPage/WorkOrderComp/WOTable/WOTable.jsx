@@ -1,45 +1,35 @@
 import React from "react";
-import "../WOTable/WOTable.css";
-import { BsFillPencilFill, BsFillTrashFill } from "react-icons/bs";
 
-const WOTable = ({ rows, deleteRow, editRow }) => {
+const WOTable = () => {
   return (
-    <div className="workorder-table--wrapper">
-      <table className="workorder-table">
+    <div>
+      <h2>Work Order Table</h2>
+      <table>
         <thead>
           <tr>
+            <th>Printing Machine Nmber</th>
+            <th>Operator</th>
+            <th>Salesman</th>
+            <th>TDS</th>
+            <th>WO#</th>
             <th>Customer Name</th>
-            <th className="expand">Material</th>
             <th>Date</th>
-            <th>Status</th>
-            <th>Actions</th>
+            <th>Circumference</th>
+            <th>Customer Item Packing</th>
+            <th>Order Qty (kg/pcs)</th>
+            <th>Width</th>
+            <th>Length</th>
+            <th>Micron</th>
+            <th>Roll Weight/Pcs</th>
+            <th>No. of Rolls</th>
+            <th>W Direction</th>
+            <th>Printing Roll Size</th>
+            <th>Micron</th>
+            <th>Lamination Roll Size</th>
+            <th>Micron</th>
           </tr>
         </thead>
-        <tbody>
-          {rows.map((row, index) => {
-
-            const statusText = row.status.charAt(0).toUpperCase() + row.status.slice(1);
-
-            return (
-              <tr key={index}>
-                <td>{row.custName}</td>
-                <td className="expand">{row.material}</td>
-                <td>{row.date}</td>
-                <td>
-                  <span className={`label label-${row.status}`}>
-                    {statusText}
-                  </span>
-                </td>
-                <td>
-                  <span className="actions">
-                    <BsFillTrashFill className="delete-btn" onClick={() => deleteRow(index)} />
-                    <BsFillPencilFill onClick={()=>editRow(index)}/>
-                  </span>
-                </td>
-              </tr>
-            );
-          })}
-        </tbody>
+        <tbody></tbody>
       </table>
     </div>
   );

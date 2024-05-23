@@ -1,31 +1,47 @@
 import React, { useState, useRef, useEffect } from "react";
+import { useNavigate, Link } from "react-router-dom";
 import "../Login/Login.css";
 import AlMascoLogo from "../../assets/almasco-logo.png";
 import SkeeperAILogo from "../../assets/sKeeperAI-logo.png";
 
 const Login = () => {
-  const userRef = useRef();
-  const errRef = useRef();
-  const [user, setUser] = useState("");
-  const [pwd, setPwd] = useState("");
-  const [errMsg, setErrMsg] = useState("");
-  const [success, setSuccess] = useState(false);
+  async function submitData(username, password) {
+    const userid = String(username);
+    const pass = String(password);
+    console.log("inside submit data: ", userid, pass);
 
-  useEffect(() => {
-    userRef.current.focus();
-  }, []);
+    try {
+      const response = await fetch("/", {
+        method: "POST",
+        headers: {
+          Accept: "application/json",
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify({
+          username: userid,
+          password: pass,
+        }),
+      });
 
-  useEffect(() => {
-    setErrMsg("");
-  }, [user, pwd]);
+      if (!response.ok) {
+        console.error("Failed to submit data", response.statusText);
+      } else {
+        console.log("Data Submitted successfully");
+      }
+    } catch (error) {
+      console.error("Error submitting data", error);
+    }
+  }
+  const [username, setUsername] = useState("");
+  const [password, setPassword] = useState("");
 
-  const handleSubmit = async (e) => {
-    e.preventDefault();
-    console.log(user, pwd);
-    setUser("");
-    setPwd("");
-    setSuccess(true);
-  };
+  function handleChangeUsername(e) {
+    setUsername(e.target.value);
+  }
+
+  function handleChangePassword(e) {
+    setPassword(e.target.value);
+  }
 
   return (
     <div className="login-page--container">
@@ -43,62 +59,50 @@ const Login = () => {
             <div className="undertext">Inventory Management System</div>
           </h2>
         </div>
-
-        <>
-          {success ? (
-            <section>
-              <h1>Youre logged in</h1>
-              <br />
-              <p>
-                <a href="#"> Go to Home</a>
-              </p>
-            </section>
-          ) : (
-            <div className="login-container">
-              <div className="flavour-text">
-                <div className="welcome-text">
-                  <h1>Welcome!</h1>
-                </div>
-                <div className="login-text">
-                  <h2>Login</h2>
-                </div>
-              </div>
-              <form onSubmit={handleSubmit}>
-                <div className="inputs">
-                  <div className="empid-input">
-                    {/* <div className="emp-id-text">EmpID</div> */}
-                    <label htmlFor="username">Username</label>
-                    <input
-                      type="text"
-                      placeholder=""
-                      id="username"
-                      ref={userRef}
-                      autoComplete="off"
-                      onChange={(e) => setUser(e.target.value)}
-                      value={user}
-                      required
-                    />
-                  </div>
-                  <div className="pass-input">
-                    {/* <div className="pass-text">Password</div> */}
-                    <label htmlFor="password">Password</label>
-                    <input
-                      type="password"
-                      placeholder=""
-                      id="password"
-                      onChange={(e) => setPwd(e.target.value)}
-                      value={pwd}
-                      required
-                    />
-                  </div>
-                  <div className="submit-button">
-                    <button>Login</button>
-                  </div>
-                </div>
-              </form>
+        <div className="login-container">
+          <div className="flavour-text">
+            <div className="welcome-text">
+              <h1>Welcome!</h1>
             </div>
-          )}
-        </>
+            <div className="login-text">
+              <h2>Login</h2>
+            </div>
+          </div>
+          <form>
+            <div className="inputs">
+              <div className="empid-input">
+                {/* <div className="emp-id-text">EmpID</div> */}
+                <label htmlFor="username">Username</label>
+                <input
+                  type="text"
+                  placeholder=""
+                  id="username"
+                  autoComplete="off"
+                  onChange={handleChangeUsername}
+                  value={username}
+                  required
+                />
+              </div>
+              <div className="pass-input">
+                {/* <div className="pass-text">Password</div> */}
+                <label htmlFor="password">Password</label>
+                <input
+                  type="password"
+                  placeholder=""
+                  id="password"
+                  onChange={handleChangePassword}
+                  value={password}
+                  required
+                />
+              </div>
+              <div className="submit-button">
+                <button type="button" onClick={submitData}>
+                  Login
+                </button>
+              </div>
+            </div>
+          </form>
+        </div>
       </div>
     </div>
   );
