@@ -5,35 +5,9 @@ import AlMascoLogo from "../../assets/almasco-logo.png";
 import SkeeperAILogo from "../../assets/sKeeperAI-logo.png";
 
 const Login = () => {
-  async function submitData(username, password) {
-    const userid = String(username);
-    const pass = String(password);
-    console.log("inside submit data: ", userid, pass);
-
-    try {
-      const response = await fetch("/", {
-        method: "POST",
-        headers: {
-          Accept: "application/json",
-          "Content-Type": "application/json",
-        },
-        body: JSON.stringify({
-          username: userid,
-          password: pass,
-        }),
-      });
-
-      if (!response.ok) {
-        console.error("Failed to submit data", response.statusText);
-      } else {
-        console.log("Data Submitted successfully");
-      }
-    } catch (error) {
-      console.error("Error submitting data", error);
-    }
-  }
   const [username, setUsername] = useState("");
   const [password, setPassword] = useState("");
+  const navigate = useNavigate();
 
   function handleChangeUsername(e) {
     setUsername(e.target.value);
@@ -41,6 +15,33 @@ const Login = () => {
 
   function handleChangePassword(e) {
     setPassword(e.target.value);
+  }
+
+  async function submitData() {
+    console.log("inside submit data: ", username, password);
+
+    try {
+      const response = await fetch("http://127.0.0.1:5000/", {
+        method: "POST",
+        headers: {
+          Accept: "application/json",
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify({
+          username: username,
+          password: password,
+        }),
+      });
+
+      if (!response.ok) {
+        console.error("Failed to submit data", response.statusText);
+      } else {
+        console.log("Data Submitted successfully");
+        navigate("/main");
+      }
+    } catch (error) {
+      console.error("Error submitting data", error);
+    }
   }
 
   return (

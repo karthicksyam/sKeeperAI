@@ -36,7 +36,76 @@ const Dashboard = () => {
               <img src={pet12} alt="" />
               <img src={bopp30} alt="" />
             </div>
-            <div className="text-display"></div>
+            <div className="table-display">
+              <table>
+                <thead>
+                  <tr>
+                    <td>
+                      <h3>Month</h3>
+                    </td>
+                    <td>
+                      <h3>Predictions</h3>
+                    </td>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td>2024-05-01</td>
+                    <td>7316.3</td>
+                  </tr>
+                  <tr>
+                    <td>2024-06-01</td>
+                    <td>5394.3</td>
+                  </tr>
+                  <tr>
+                    <td>2024-07-01</td>
+                    <td>5363.5</td>
+                  </tr>
+                  <tr>
+                    <td>2024-08-01</td>
+                    <td>3931.1</td>
+                  </tr>
+                  <tr>
+                    <td>2024-09-01</td>
+                    <td>5396.6</td>
+                  </tr>
+                </tbody>
+              </table>
+              <table>
+                <thead>
+                  <tr>
+                    <td>
+                      <h3>Month</h3>
+                    </td>
+                    <td>
+                      <h3>Predictions</h3>
+                    </td>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td>2024-05-01</td>
+                    <td>80.85</td>
+                  </tr>
+                  <tr>
+                    <td>2024-06-01</td>
+                    <td>80.85</td>
+                  </tr>
+                  <tr>
+                    <td>2024-07-01</td>
+                    <td>130.85</td>
+                  </tr>
+                  <tr>
+                    <td>2024-08-01</td>
+                    <td>87.85</td>
+                  </tr>
+                  <tr>
+                    <td>2024-09-01</td>
+                    <td>154.50</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
           </div>
         </div>
       </div>

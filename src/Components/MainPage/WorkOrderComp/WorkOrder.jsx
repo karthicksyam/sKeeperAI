@@ -11,9 +11,7 @@ const WorkOrder = () => {
       <div className="display-container">
         <div className="header-container">
           <h1 className="header-text">Work Orders</h1>
-          <div className="add-button">
-            <button>Add</button>
-          </div>
+          <div className="btn">Add</div>
           <div className="header-contents">
             {/* <div className="question-icon">
               <img src={questionicon} alt="" />

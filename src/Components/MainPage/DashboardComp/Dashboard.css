@@ -23,14 +23,24 @@
 
 .display-container--one {
   background-color: #f5f9ff;
+  /* background-color: red; */
   height: 84vh;
   width: 1175px;
   margin-left: 15px;
   margin-top: 15px;
   border-radius: 15px;
-  /* display: flex;
-    justify-content: center;
+  display: flex;
+  flex-direction: column;
+  /* justify-content: center;
     align-items: center; */
+}
+
+.table-display {
+  background-color: white;
+  width: 130vh;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
 }
 
 .header-contents {
@@ -85,4 +95,31 @@
 .graph-display img {
   height: 400px;
   width: 550px;
+}
+
+table {
+  /* border: 2px solid rgba(0, 0, 0, 0.333); */
+  text-align: center;
+  width: 40vh;
+  margin-top: 20px;
+  font-family: "Poppins", sans-serif;
+}
+
+h3 {
+  color: #072c7c;
+}
+
+/* td {
+  border-left: 3px solid #072c7c;
+} */
+
+thead {
+  background-color: #f5f9ff;
+}
+
+table,
+thead,
+td {
+  border: 2px solid #072c7c;
+  border-collapse: collapse;
 }
