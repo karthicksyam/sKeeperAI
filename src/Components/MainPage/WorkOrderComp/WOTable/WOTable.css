@@ -1,6 +1,6 @@
 .work-order--table {
   /* background-color: red; */
-  height: 90px;
+  height: 80vh;
   width: 70vw;
   overflow-x: scroll;
 }

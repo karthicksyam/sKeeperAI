@@ -1,6 +1,7 @@
 import React from "react";
 import "../InventoryComp/Inventory.css";
 import profileicon from "../../../assets/profle-icon.png";
+import InventoryTable from "./InventoryTable/InventoryTable";
 
 const Inventory = () => {
   return (
@@ -28,7 +29,9 @@ const Inventory = () => {
             </div>
           </div>
         </div>
-        <div className="inv-display-container"></div>
+        <div className="inv-display-container">
+          <InventoryTable />
+        </div>
       </div>
     </div>
   );
