@@ -4,3 +4,12 @@
   width: 70vw;
   overflow-x: scroll;
 }
+
+.work-order--table th {
+  padding-left: 30px;
+  padding-right: 30px;
+  border-right: 2px solid #072c7c;
+}
+/* thead {
+  background-color: red;
+} */

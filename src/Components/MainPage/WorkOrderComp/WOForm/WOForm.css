@@ -1,0 +1,39 @@
+.form-display form {
+  /* display: flex; */
+  flex-direction: column;
+  /* width: 50vw; */
+}
+
+.form-display input {
+  margin: 10px;
+  border-radius: 10px;
+  width: 200px;
+  padding: 10px;
+  /* background-color: blue; */
+  height: 40px;
+}
+
+.form-display .btn {
+  margin: 10px;
+}
+
+.modal-display {
+  background-color: #f5f9ff;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin-top: 10vh;
+  margin-left: 20vh;
+  border-radius: 10px;
+  height: 70vh;
+  width: 80vw;
+  border: 2px solid #072c7c;
+}
+
+.modal-display h2 {
+  margin-bottom: 30px;
+  font-family: "Poppins", sans-serif;
+  color: #072c7c;
+}

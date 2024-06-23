@@ -7,6 +7,7 @@ import SkeeperAILogo from "../../assets/sKeeperAI-logo.png";
 const Login = () => {
   const [username, setUsername] = useState("");
   const [password, setPassword] = useState("");
+  const [error, setError] = useState(null);
   const navigate = useNavigate();
 
   function handleChangeUsername(e) {
@@ -33,13 +34,19 @@ const Login = () => {
         }),
       });
 
+      const data = await response.json();
+
       if (!response.ok) {
+        setError(data.error || "Failed to submit data");
         console.error("Failed to submit data", response.statusText);
+        navigate("/");
       } else {
         console.log("Data Submitted successfully");
+        setError(null);
         navigate("/main");
       }
     } catch (error) {
+      setError("Error submitting data");
       console.error("Error submitting data", error);
     }
   }
@@ -100,6 +107,7 @@ const Login = () => {
                 <button type="button" onClick={submitData}>
                   Login
                 </button>
+                {error && <div className="error-message"> {error}</div>}
               </div>
             </div>
           </form>

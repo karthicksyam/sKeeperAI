@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from "react";
 import axios from "axios";
+import "../InventoryTable/InventoryTable.css";
 import DataTable from "react-data-table-component";
 
 const headers = ["Key", "Serial No", "Material", "Stock (in kg)"];
@@ -45,7 +46,7 @@ const InventoryTable = () => {
   // const rows = Object.keys(data).map((key) => [key, ...data[key]]);
   return (
     <div>
-      <h2>Inventory Table</h2>
+      {/* <h2>Inventory Table</h2> */}
       <div className="inventory-table--display">
         <table>
           <thead>

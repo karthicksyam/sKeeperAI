@@ -109,12 +109,8 @@ h3 {
   color: #072c7c;
 }
 
-/* td {
+td {
   border-left: 3px solid #072c7c;
-} */
-
-thead {
-  background-color: #f5f9ff;
 }
 
 table,
